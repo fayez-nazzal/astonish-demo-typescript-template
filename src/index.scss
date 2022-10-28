@@ -1,0 +1,262 @@
+@import 'https://fonts.googleapis.com/css?family=Baloo+Paaji';
+
+$primary-color: #ffe221;
+$secondary-color: #ffffff;
+$tertiary-color: #0c23b3;
+$quaternary-color: #72b8f9;
+
+h1 {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  span {
+    transform: translateY(-50px);
+    opacity: 0;
+    animation-name: titleAnimation;
+    animation-timing-function:ease;
+    animation-duration: 2s;
+  }
+  
+  span.text {
+    font-size: 75px;
+    width: 100%;
+    color: $primary-color;
+    -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 80%);
+    clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 80%);
+  }
+
+  span.caption {
+    margin-top: 8px;
+    font-size: 25px;
+    color: $secondary-color;
+  }
+
+  span.badge {
+    font-size: 24px;
+    color: $secondary-color;
+    background-color: $tertiary-color;
+    padding: 0.8rem;
+    border-radius: 100% 50%;
+  }
+}
+
+h1 span{
+  animation-delay: 0.1s;
+  -webkit-animation-fill-mode: forwards;
+  max-width: 14em;
+}
+
+h1 span.text.caption {
+  animation-delay:  0.4s;
+}
+
+.usechrome{
+  font-size: 10px;
+  color: $secondary-color;
+  font-family: helvetica, arial;
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+  left: 0;
+}
+
+@keyframes titleAnimation {
+  0% {
+      transform: translateY(-50px);
+      opacity: 0;
+      -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 80%);
+      clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 80%);
+  }
+
+  60% {
+      transform: translateY(0);
+      opacity: 1;
+      -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 5%);
+      clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 5%);
+  }
+
+  100% {
+       transform: translateY(0);
+       opacity: 1;
+      -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0%);
+      clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0%);
+  }
+}
+
+.liquid-box {
+  width: 220px;
+  height: 90px;
+  position: relative;
+  transition: .5s;
+  background-size: cover;
+}
+
+.liquid-box p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.liquid-box span {
+  display: block;
+  width: 20px;
+  height: 100%;
+  top: 50%;
+  transform: translate(0, -50%);
+  background: $quaternary-color;
+  position: absolute;
+  transition: .7s;
+  animation: liquid 1s infinite;
+}
+
+.liquid-box.liquid-on span, .liquid-box:hover span {
+  height: 120px;
+  transition: .4s;
+}
+
+.liquid-box span:nth-child(1) {
+  transition-delay: 0.25s;
+  left: 0;
+}
+
+.liquid-box span:nth-child(2) {
+  transition-delay: 0.2s;
+  left: 20px;
+}
+
+.liquid-box span:nth-child(3) {
+  transition-delay: 0.15s;
+  left: 40px;
+}
+
+.liquid-box span:nth-child(4) {
+  transition-delay: 0.1s;
+  left: 60px;
+}
+
+.liquid-box span:nth-child(5) {
+  transition-delay: 0.05s;
+  left: 80px;
+}
+
+.liquid-box span:nth-child(6) {
+  transition-delay: 0s;
+  left: 100px;
+}
+
+.liquid-box span:nth-child(7) {
+  transition-delay: 0.05s;
+  left: 120px;
+}
+
+.liquid-box span:nth-child(8) {
+  transition-delay: 0.1s;
+  left: 140px;
+}
+
+.liquid-box span:nth-child(9) {
+  transition-delay: 0.15s;
+  left: 160px;
+}
+
+.liquid-box span:nth-child(10) {
+  transition-delay: 0.2s;
+  left: 180px;
+}
+
+.liquid-box span:nth-child(11) {
+  transition-delay: 0.25s;
+  left: 200px;
+}
+
+p {
+  color: $primary-color;
+  font-weight: 700;
+  font-size: 20px;
+  z-index: 10;
+  position: relative;
+  transform: .5s;
+  height: 100%;
+}
+
+.liquid-box:hover p {
+  color: $secondary-color;
+}
+
+.liquid-box-container {
+  filter: url(#goo);
+}
+
+.liquid-shape {
+  width: 400px;
+  height: 400px;
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  animation: liquid-shape 8s ease-in-out infinite;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: .4s ease-in-out;
+  transform: scale(1);
+}
+
+.liquid-shape:hover {
+  transform: scale(1.08);
+}
+
+.trait-1 {
+  background-image: url("/images/trait-1.jpg");
+}
+
+.trait-2 {
+  background-image: url("/images/trait-2.jpg");
+}
+
+.trait-3 {
+  background-image: url("/images/trait-3.jpg");
+}
+
+.trait-4 {
+  background-image: url("/images/trait-4.jpg");
+}
+
+.trait-5 {
+  background-image: url("/images/trait-5.jpg");
+}
+
+@keyframes liquid-shape {
+  0% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+
+  50% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+  }
+
+  100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+}
+
+.liquid-shape-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 8rem;
+  align-items: center;
+}
+
+.content {
+  color: $secondary-color;
+  max-width: 900px;
+  margin-left: 3rem;
+  font-size: 2rem;
+  background-color: $tertiary-color;
+  padding: 4rem 3rem;
+  border-radius: 10% 20%;
+}
+
+.text-primary {
+  color: $primary-color;
+}
